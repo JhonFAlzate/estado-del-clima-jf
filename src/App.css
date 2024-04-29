@@ -1,0 +1,58 @@
+
+.app {
+    /* background-image: url(/fondo1.jpg); */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 100vh;
+    padding: 0.5em;
+    .loading {
+        background-color: aliceblue;
+        font-size: 2em;
+        color: rgb(12, 54, 127);
+        border-radius: 5px;
+            }
+    .loading__message {
+        background-color: aliceblue;
+        font-size: 2em;
+        color: rgb(12, 54, 127);
+        border-radius: 5px;
+    }
+    .form {
+        align-items: center;
+        align-content: center;
+       
+
+        .form__input {
+            background-color: rgb(218, 217, 142);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1em;
+           
+            color: black;
+            padding: 0.4em;
+            border-radius: 0.3em;
+            width: 100%;
+            height: 2em;
+        }
+        .form__button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1em;
+            background-color: rgb(177, 174, 172);
+            color: black;
+            padding: 0.4em;
+            border-radius: 0.3em;
+            width: 100%;
+            height: 2em;
+        }
+    }
+}
