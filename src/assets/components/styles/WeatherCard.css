@@ -10,6 +10,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
+    
 
 
 
@@ -99,13 +100,15 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        font-size: 0.7em;
-        background-color: rgb(207, 63, 11);
+        font-size: 0.9em;
+        background-color: rgb(171, 69, 32);
         color: white;
         padding: 0.4em 2 em;
         border-radius: 0.3em;
         width: 60%;
         height: 2em;
+        border: solid white;
+            border-radius: 0.2em;
         transition: all 0.3s ease-in-out;
 
         &:hover {

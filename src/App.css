@@ -27,22 +27,30 @@
     }
 
     .section2 {
+      
         width: 100%;
+        max-width: 22em;
+        background-color: rgba(198, 166, 149, 0.667);
         padding: 1em;
+        border-radius: 0.8em;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         align-content: center;
         flex-wrap: wrap;
-        
+        margin: 1em;
+        gap: 0.3em;
+    
                
-        .form__h4 {
+        .form__h3 {
            
-          
+           
             font-size: 1em;
-            font-style: italic;
-            color: rgb(250, 244, 244);        
+            color: rgb(14, 13, 13); 
+            font-weight: 800;   
+            border-radius: 0.3em;    
+            text-align: start;
            
         }
 
@@ -50,10 +58,13 @@
            
             display: grid;
             grid-template-columns: 2fr 1fr;
+            border: solid white;
+            border-radius: 0.2em;
 
             .form__input {
                 background-color: rgb(218, 217, 142);
                border-radius: 0.3em;
+               text-transform: lowercase;
                 
             }
 

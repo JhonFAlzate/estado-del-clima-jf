@@ -16,7 +16,7 @@ function App() {
 
   const [country, setCountry] = useState("colombia");
   const [ubicacion, setUbicacion] = useState([]);
-  const [clima, setClima] = useState();
+  // const [clima, setClima] = useState();
 
   const [numImagen, setNumImagen] = useState(1);
 
@@ -32,13 +32,13 @@ function App() {
       const API_KEY = "c1f53bef2ba36e5d1181b83d50fe8ffa";
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${ubicacion[0]}&lon=${ubicacion[1]}&appid=${API_KEY}`;
       axios.get(url).then((res) => {
-        const celsius1 = (res.data.main.temp - 273.15).toFixed(1);
+        // const celsius1 = (res.data.main.temp - 273.15).toFixed(1);
         const celsius = (res.data.main.temp - 273.15).toFixed(1);
         const fahrenheit = ((celsius * 9) / 5 + 32).toFixed(1);
         setTemp({ celsius, fahrenheit });
-        setClima(celsius1);
+        // setClima(celsius1);
         setWeather(res.data);
-        const numImagen = imageClame(celsius1);
+        const numImagen = imageClame(celsius);
         setNumImagen(numImagen);
       });
     }
@@ -106,9 +106,10 @@ function App() {
         </h2>
       ) : (
         <WeatherCard weather={weather} temp={temp} />
+        
       )}
       <section className="section2">
-        <h4 className="form__h4">Clima de un País :</h4>
+        <h3 className="form__h3">Ver Clima de otro País : </h3>
         <form className="form" onSubmit={handleSubmit}>
           <input
             className="form__input"
