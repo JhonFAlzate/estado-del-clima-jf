@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './styles/WeatherCard.css'
 
-const WeatherCard = ({weather, temp}) => {
+const WeatherCard = ({weather, temp, capital}) => {
 
     const [isCelsius, setIsCelsius] = useState(true)
 
@@ -13,6 +13,7 @@ const WeatherCard = ({weather, temp}) => {
     <article className="card">
         <h1 className="card__title" >  Weather App</h1>
         <h2 className="card__country">{weather?.name}, {weather?.sys.country} </h2>
+        <h2 className="card__city"> Ciudad {capital}</h2>
         <section className="card__body">
             <div className="card__image-container">
                <img src={ weather && `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`} alt="icon de clima" />

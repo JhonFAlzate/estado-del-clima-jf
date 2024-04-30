@@ -15,11 +15,16 @@ function App() {
   const [country, setCountry] = useState("colombia");
   const [ubicacion, setUbicacion] = useState([]);
   const [numImagen, setNumImagen] = useState(1);
+  const [capitalCity, setCapitalCity] = useState('')
 
   useEffect(() => {
     axios
       .get(`https://restcountries.com/v3.1/name/${country}`)
-      .then((res) => setUbicacion(res.data[0].latlng))
+      .then((res) => {
+        setUbicacion(res.data[0].latlng)
+        setCapitalCity(res.data[0].capital[0])
+        console.log(res.data)
+      })
       .catch((err) => console.log(err));
   }, [country]);
 
@@ -105,7 +110,7 @@ function App() {
              Por favor permite la ubicación para poder ver el clima local.
             </h2>) 
         : (
-           <WeatherCard weather={weather} temp={temp} />
+          <WeatherCard weather={weather} temp={temp} capital ={capitalCity}/>
           )
       }
       <section className="section2">
