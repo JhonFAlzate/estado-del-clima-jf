@@ -16,7 +16,7 @@ function App() {
 
   const [country, setCountry] = useState("colombia");
   const [ubicacion, setUbicacion] = useState([]);
-  // const [clima, setClima] = useState();
+
 
   const [numImagen, setNumImagen] = useState(1);
 
@@ -31,16 +31,18 @@ function App() {
     if (ubicacion.length > 0) {
       const API_KEY = "c1f53bef2ba36e5d1181b83d50fe8ffa";
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${ubicacion[0]}&lon=${ubicacion[1]}&appid=${API_KEY}`;
-      axios.get(url).then((res) => {
-        // const celsius1 = (res.data.main.temp - 273.15).toFixed(1);
+      axios.get(url)
+        .then((res) => {
+       
         const celsius = (res.data.main.temp - 273.15).toFixed(1);
         const fahrenheit = ((celsius * 9) / 5 + 32).toFixed(1);
         setTemp({ celsius, fahrenheit });
-        // setClima(celsius1);
+      
         setWeather(res.data);
         const numImagen = imageClame(celsius);
         setNumImagen(numImagen);
-      });
+      })
+      .catch(err => console.log(err));
     }
   }, [ubicacion]);
 
@@ -84,7 +86,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCountry(inputSearch.current.value);
+    setCountry(inputSearch.current.value.trim());
   };
 
   const photoFondo = {
@@ -93,23 +95,25 @@ function App() {
 
   return (
     <div className="app" style={photoFondo}>
-      {isLoading ? (
+      {
+      isLoading ? (
         <div className="loading">
           <h2 className="loading__message">Loading....</h2>
           {showMessage && (
             <p>Por favor activa la ubicación para poder ver el clima local.</p>
           )}
-        </div>
-      ) : hasError ? (
-        <h2 className="loading__message">
-          Por favor permite la ubicación para poder ver el clima local.
-        </h2>
-      ) : (
-        <WeatherCard weather={weather} temp={temp} />
-        
-      )}
+        </div>)
+        : hasError 
+        ? (
+            <h2 className="loading__message">
+             Por favor permite la ubicación para poder ver el clima local.
+            </h2>) 
+        : (
+           <WeatherCard weather={weather} temp={temp} />
+          )
+      }
       <section className="section2">
-        <h3 className="form__h3">Ver Clima de otro País : </h3>
+        <h3 className="form__h3">Ver Clima de la Capital un País : </h3>
         <form className="form" onSubmit={handleSubmit}>
           <input
             className="form__input"
