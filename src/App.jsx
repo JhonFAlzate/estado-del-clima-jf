@@ -9,15 +9,11 @@ function App() {
   const [coords, setCoords] = useState();
   const [weather, setWeather] = useState();
   const [temp, setTemp] = useState();
-
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
-
   const [country, setCountry] = useState("colombia");
   const [ubicacion, setUbicacion] = useState([]);
-
-
   const [numImagen, setNumImagen] = useState(1);
 
   useEffect(() => {
@@ -129,5 +125,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
