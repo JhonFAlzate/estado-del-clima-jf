@@ -12,10 +12,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
-  const [country, setCountry] = useState("Colombia");
+  const [country, setCountry] = useState("");
   const [ubicacion, setUbicacion] = useState([]);
   const [numImagen, setNumImagen] = useState(1);
-  const [capitalCity, setCapitalCity] = useState('Copacabana')
+  const [capitalCity, setCapitalCity] = useState('')
 
   useEffect(() => {
     axios
