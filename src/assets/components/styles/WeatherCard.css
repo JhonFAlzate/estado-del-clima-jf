@@ -18,18 +18,22 @@
         display: flex;
         text-align: center;
         font-weight: 900;
-        font-size: 1.3em;
+        font-size: 1.5em;
         margin-bottom: 0.2em;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .card__country {
-        font-size: 0.7em;
-        font-weight: 600;
+        font-size: 1em;
+        font-weight: 700;
         text-align: center;
         margin-bottom: 1em;
 
+    }
+    .card__city {
+        font-weight: 400;
+        color: #684003;
     }
 
     .card__body {
